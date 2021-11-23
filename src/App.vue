@@ -39,11 +39,11 @@
 </div>
  
    <div class="form-floating mb-3">
-  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">Email address</label>
+  <input type="email" v-model="inpEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label type="email" for="floatingInput">Email address</label>
 </div>
 <div class="form-floating">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+  <input type="password" v-model="inPsw" class="form-control" id="floatingPassword" placeholder="Password">
   <label for="floatingPassword">Password</label>
 </div>
 
@@ -56,15 +56,39 @@
 </template>
 
 <script>
+// export default {
+//   name: 'app',
+//   methods:{
+//     showAlert(){
+//       alert("han@nate.com \n 1234")
+//     }
+//   }
+
+// }
 export default {
-  name: 'app',
-  methods:{
-    showAlert(){
-      alert("han@nate.com \n 1234")
+  name: 'App',
+  data () {
+    return {
+      inpEmail: 'email',
+      inPsw: 'password'
+    }
+  },
+  methods: {
+    getData () {
+      alert('이메일 : ' + this.inpEmail + '\n password : ' + this.inPsw)
     }
   }
-
+  // methods: { 
+  //   fnGetVal () {
+  //     var valName = document.getElementById('nm').value
+  //     alert(valName)
+  //   }
+  // }
 }
+// function fnGetVal () { // eslint-disable-line no-unused-vars
+//   var valName = document.getElementById('nm').value
+//   alert(valName)
+// }
 </script>
 
 <style>
