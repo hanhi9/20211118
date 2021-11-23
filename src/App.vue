@@ -37,17 +37,17 @@
     </div>
   </div>
 </div>
- 
+    
    <div class="form-floating mb-3">
   <input type="email" v-model="inpEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label type="email" for="floatingInput">Email address</label>
+  <label for="floatingInput">Email address</label>
 </div>
 <div class="form-floating">
   <input type="password" v-model="inPsw" class="form-control" id="floatingPassword" placeholder="Password">
   <label for="floatingPassword">Password</label>
 </div>
 
-<b-button variant="success" @click="showAlert">Button</b-button>
+<b-button variant="success" @click="getData">Button</b-button>
 
   </div>
   
