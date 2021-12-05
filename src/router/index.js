@@ -1,39 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import about from '@/views/about.vue';
-import home from '@/views/home.vue';
-import login from '@/views/login.vue';
-import main from '@/views/main.vue';
+import About from '@/views/About.vue'
+import Main from '@/views/Main.vue'
+import Params from '@/views/Params.vue'
+//import Params from '@/views/Params.vue'
+
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/Main',
+      name: 'Main',
+      component: Main
     },
     {
-      path: '/',
-      name: 'about',
-      component: about
+      path: '/About',
+      name: 'About',
+      component: About
     },
     {
-      path: '/',
-      name: 'home',
-      component: home
+      path: '/Login',
+      //component: Params,
+      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+      name: 'Login',
+      props: true
     },
     {
-      path: '/',
-      name: 'main',
-      component: main
+      path: '/Params',
+      component: Params,
+      name: 'Params'
     },
-    {
-      path: '/',
-      name: 'login',
-      component: login
-    }
   ]
 })
