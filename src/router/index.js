@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import About from '@/views/About.vue'
 import Main from '@/views/Main.vue'
 import Params from '@/views/Params.vue'
+import Info from '@/views/Info.vue'
 //import Params from '@/views/Params.vue'
 
 
@@ -15,24 +16,33 @@ export default new Router({
     {
       path: '/Main',
       name: 'Main',
-      component: Main
+      component: Main,
+      props: true
     },
     {
       path: '/About',
       name: 'About',
-      component: About
+      component: About,
+      props: true
     },
     {
       path: '/Login',
       //component: Params,
-      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
+      component: () => import(/* webpackChunkName: "Login" */ '../views/Login.vue'),
       name: 'Login',
       props: true
     },
     {
       path: '/Params',
       component: Params,
-      name: 'Params'
+      name: 'Params',
+      props: true
     },
+    {
+      path: '/Info',
+      component: Info,
+      name: 'Info',
+      props: true
+    }
   ]
 })

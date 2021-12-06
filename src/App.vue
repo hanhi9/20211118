@@ -2,6 +2,8 @@
   <div id="app">
     <router-link :to="{name: 'Login'}">로그인</router-link>
     <router-link :to="{name: 'App'}">로그아웃</router-link>
+    <router-link :to="{name: 'Info'}">회원정보( {{ this.$route.params.email}} )</router-link>
+    <router-link :to="{name: 'Info', Info: {email: this.$route.params.email, pw:this.$route.params.pw}}">회원정보( {{ this.$route.params.email}} )</router-link>
     <router-view></router-view>
   </div>
   

@@ -10,7 +10,7 @@
   <label for="floatingPassword">Password</label>
 </div>
 <div > {{message}} </div>
-<router-link :to="{name: 'Params', params: {name: '1', email:'2'}}">
+    <router-link :to="{name: 'Main', params: {email: this.inpEmail, pw:this.inPsw}}">
       확인
       </router-link>
        <router-view></router-view>
@@ -22,7 +22,13 @@
 
 <script>
 export default {
-
+  name: 'Login',
+  data () {
+    return {
+      inpEmail: '',
+      inPsw: ''
+    }
+  }
 }
 </script>
 
