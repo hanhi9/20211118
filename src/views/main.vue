@@ -10,12 +10,18 @@
 
 <script>
 export default {
-  name: 'Main',
-   created() {
-    console.log(this.$route.params.email);
-    console.log(this.$route.params.pw);
-  }
-}
+        name: 'Login',
+        props: {
+            email: {
+                type: String,
+                default : ''
+            },
+            pw: {
+                type: Number,
+                default: 0
+            }
+        }
+    }
 </script>
 
 <style>

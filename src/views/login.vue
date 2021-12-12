@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <h3>{{title}}</h3>
    <div class="form-floating mb-3">
   <input type="email" v-model="inpEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
   <label for="floatingInput">Email address</label>
@@ -21,15 +21,33 @@
 </template>
 
 <script>
+// export default {
+//   name: 'Login',
+//   data () {
+//     return {
+//       inpEmail: '',
+//       inPsw: ''
+//     }
+//   },
+//   created() {
+//     console.log(this.$route.params.email);
+//     console.log(this.$route.params.pw);
+//   }
+// }
+
 export default {
-  name: 'Login',
-  data () {
-    return {
-      inpEmail: '',
-      inPsw: ''
+        name: 'Login',
+        props: {
+            name: {
+                type: String,
+                default : ''
+            },
+            age: {
+                type: Number,
+                default: 0
+            }
+        }
     }
-  }
-}
 </script>
 
 <style>

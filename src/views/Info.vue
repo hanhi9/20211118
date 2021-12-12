@@ -3,7 +3,7 @@
 		<form @submit.prevent="submitForm">
 			<div>
 				<label for="email">email</label>
-				<input type="text" id="email" v-model="email" value="1212">
+				<input type="text" v-model="email">{{email}}
 			</div>
 			<div>
 				<label for="name">성함</label>
@@ -42,16 +42,16 @@ export default {
 	name: 'Info',
 	data() {
 		return {
-			email:this.$route.params.email,
+			email:'',
 			name: '',
-      inPsw: '',
+      		inPsw: '',
 			pw: '',
 			passwordConfirm: '',
-      isShowing: false,
+      		isShowing: false,
 			position: '',
 			teamName: '',
-      animails:['100','200','300','400'],
-      isButtonDisabled:true
+      		animails:['100','200','300','400'],
+      		isButtonDisabled:true
 		};
 	},
 	methods: {
@@ -63,12 +63,23 @@ export default {
       console.log("1111111111");
     },
     getData() {
-       console.log("2222222222222");
+       //email:{{ $route.params.email }}
     },
     toggleShow() {
       this.isShowing = !this.isShowing;
-    } 
+    } ,
+	props: {
+            email: {
+                type: String,
+                default : ''
+            },
+            pw: {
+                type: Number,
+                default: 0
+            }
+        }
 	},
+	
 };
 </script>
 
